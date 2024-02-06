@@ -1,0 +1,15 @@
+<app-apartament-map></app-apartament-map>
+
+<router-outlet></router-outlet>
+
+<!-- <select>
+    <option *ngFor="let todo of todos" [value]="todo.id">{{todo.title}}</option>
+</select> -->
+
+<ul *ngIf="todos.length && 0">
+    <li *ngFor="let todo of todos">
+        {{todo.id}}
+        {{todo.title}}
+    </li>
+</ul>
+

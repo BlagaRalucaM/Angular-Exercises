@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-center my-5">{{title | uppercase}}</h2>
+    </div>
+
+
+    <div class="col-md-10 mx-auto">
+        <img [src]='imageSource' [width]="width" [height]="height" class="img-fluid d-block mx-auto">
+    </div>  
+
+    <div class="col-md-12">
+        <button class="btn btn-primary mx-auto d-block my-2" (click)="addPostAuto()">Add Post Auto</button>
+        <button class="btn btn-primary mx-auto d-block my-2" (click)="addPostManual()">Add Post Manual</button>
+    </div>
+
+    <div class="col-md-12" *ngIf="posts.length > 0">
+        <h2 class="text-center my-5">Posts</h2>
+
+        <div class="row" *ngFor="let post of posts; let i = index">
+            <div class="col-md-6 mx-auto my-5">
+                <h3>{{post.title}}</h3>
+                <p>{{post.body}}</p>
+                <p>Post No {{posts.length-i}}</p>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

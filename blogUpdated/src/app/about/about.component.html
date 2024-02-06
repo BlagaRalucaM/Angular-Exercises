@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-center my-5">{{title}}</h2>
+    </div>
+
+
+    <div class="col-md-10 mx-auto">
+        <img [src]='imageSource' [width]="width" [height]="height" class="img-fluid d-block mx-auto">
+    </div>
+
+    <div class="col-md-6 mx-auto">
+        <div class="row">
+            <div class="col-md-12 my-5 mx-auto">
+        
+                <p class="justify-content">{{aboutContent}}</p>
+        
+            </div>
+            <div class="col-md-12 my-1 mx-auto">
+                <button class="btn btn-primary mx-auto d-block my-2" (click)="editContent()">Edit Content</button>
+            </div>
+        </div>
+    </div>
+
+</div>

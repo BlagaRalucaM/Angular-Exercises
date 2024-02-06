@@ -1,0 +1,45 @@
+<div class="row">
+    <h2>kitchen</h2>
+    <div *ngIf="furniture.length>0">
+        Furniture inside this room:
+        <ul>
+            <li *ngFor="let item of furniture; let i = index" [attr.data-index]="i">
+                {{item}}<br>
+
+                <button type="button" (click)="removeFurniture(i, item)" class="btn btn-danger mx-3 my-2">Remove
+                    furniture</button>
+
+                <button type="button" (click)="updateFurniture(i, item)" class="btn btn-info mx-3 my-2">Update
+                    furniture</button>
+
+            </li>
+        </ul>
+
+        <div *ngIf="updateAction">
+            <div class="col-md-2">
+                <input type="text" id="updated-furniture" [(ngModel)]="furnitureToBeUpdated" class="form-control"
+                    [ngModelOptions]="{standalone: true}" />
+                <button type="button" (click)="sendUpdate()" class="btn btn-primary my-2">Apply update</button>
+
+            </div>
+
+        </div>
+        <div class="col-md-1 mx-3">
+            <button type="button" (click)="removeAllFurniture()" class="btn btn-danger">Remove all </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="row my-2 mx-1">
+
+    <form (ngSubmit)="addFurniture()">
+        <div class="col-md-2">
+            <input type="text" id="added-furniture" [(ngModel)]="furnitureToBeAdded"
+                [ngModelOptions]="{standalone: true}" class="form-control" />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary mx-2 my-2">Add furniture</button>
+        </div>
+    </form>
+</div>
